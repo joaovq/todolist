@@ -2,6 +2,7 @@ package com.sample.joao.todolist.task;
 
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,7 +60,8 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.RecordedTrip
         return tasksViewModels.size();
     }
 
-    public class RecordedTripItemViewHolder extends RecyclerView.ViewHolder {
+    public class RecordedTripItemViewHolder extends RecyclerView.ViewHolder
+        implements View.OnClickListener {
 
         @Bind(R.id.item_task_title)
         TextView titleTextView;
@@ -72,8 +74,14 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.RecordedTrip
 
         public RecordedTripItemViewHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
 
             ButterKnife.bind(this, itemView);
+
+        }
+
+        @Override
+        public void onClick(View v) {
         }
     }
 }
