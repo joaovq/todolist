@@ -1,4 +1,4 @@
-package com.sample.joao.todolist.utils;
+package com.sample.joao.todolist.others;
 
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -36,17 +36,9 @@ public class DrawerLayoutHelper {
     }
 
     public static void onItemSelected(AppCompatActivity activity,int id){
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_slideshow) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_settings) {
 
         }
 

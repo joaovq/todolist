@@ -9,7 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.sample.joao.todolist.R;
-import com.sample.joao.todolist.utils.DrawerLayoutHelper;
+import com.sample.joao.todolist.others.UiManager;
+import com.sample.joao.todolist.others.DrawerLayoutHelper;
 import com.sample.joao.todolist.others.activity.BaseActivity;
 
 public class MainActivity extends BaseActivity
@@ -25,6 +26,8 @@ public class MainActivity extends BaseActivity
         DrawerLayoutHelper.init(this,getToolbar());
 
         initNavigationView();
+
+        UiManager.loadFragment(new TasksFragment(), getFragmentManager());
     }
 
     @Override
@@ -46,7 +49,7 @@ public class MainActivity extends BaseActivity
      * Inicializa floating bar usada para adicionar uma nova tarefa
      */
     private void initFloatingBar(){
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_new_task);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

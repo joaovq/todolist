@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.sample.joao.todolist.R;
-import com.sample.joao.todolist.utils.DrawerLayoutHelper;
+import com.sample.joao.todolist.others.DrawerLayoutHelper;
 
 /**
  * Classe base {@link android.app.Activity} para todas as atividades nessa app
@@ -30,19 +30,19 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
+     * Inicializa barra de status
+     */
+    private void initToolbar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+
+    /**
      * Encontra barra de status do app
      * @return Referência para uma {@link android.support.v7.widget.Toolbar}
      */
     protected Toolbar getToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         return toolbar;
-    }
-
-    /**
-     * Inicializa barra de status
-     */
-    private void initToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
     }
 }
