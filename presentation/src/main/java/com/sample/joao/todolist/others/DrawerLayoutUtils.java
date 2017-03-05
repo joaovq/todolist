@@ -36,9 +36,7 @@ public class DrawerLayoutUtils {
     }
 
     public static void onItemSelected(AppCompatActivity activity,int id){
-        if (id == R.id.nav_slideshow) {
-            // Handle the camera action
-        } else if (id == R.id.nav_settings) {
+        if (id == R.id.nav_settings) {
 
         }
 
