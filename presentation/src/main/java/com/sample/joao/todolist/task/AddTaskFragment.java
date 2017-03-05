@@ -1,5 +1,6 @@
 package com.sample.joao.todolist.task;
 
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -36,8 +37,12 @@ public class AddTaskFragment extends BaseFragment<TaskPresenter> implements ITas
     @Bind(R.id.edit_end_date)
     EditText editEndDate;
 
-    private Date endDate;
 
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ((MainActivity) getActivity()).setActionBarTitle("Adicionar tarefa");
+    }
     @Override
     protected TaskPresenter createPresenter() {
         return new TaskPresenter();
@@ -117,7 +122,6 @@ public class AddTaskFragment extends BaseFragment<TaskPresenter> implements ITas
 
     @Override
     public void onDatePickerClicked(String date) {
-        endDate = DateUtils.converter(date);
         editEndDate.setError(null);
         editEndDate.setText(date);
     }

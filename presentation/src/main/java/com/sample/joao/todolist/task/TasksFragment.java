@@ -34,6 +34,8 @@ public class TasksFragment extends BaseFragment<GetTasksPresenter> implements IG
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         tasksRecyclerView.setLayoutManager(layoutManager);
+
+        ((MainActivity) getActivity()).setActionBarTitle("Tarefas");
     }
 
     @Override

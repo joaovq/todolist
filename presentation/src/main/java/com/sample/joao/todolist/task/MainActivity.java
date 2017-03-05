@@ -56,7 +56,7 @@ public class MainActivity extends BaseActivity
     }
 
     /**
-     * Inicializa floating bar usada para adicionar uma nova tarefa
+     * Set up floating bar to add a new task
      */
     private void initFloatingBar(){
         fab = (FloatingActionButton) findViewById(R.id.fab_new_task);
@@ -72,10 +72,17 @@ public class MainActivity extends BaseActivity
     }
 
     /**
-     * Inicializa menu de navegação da tela principal
+     * Set up navigation drawer
      */
     private void initNavigationView(){
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    /**
+     * Set the title of the action bar
+     */
+    public void setActionBarTitle(String title){
+        getToolbar().setTitle(title);
     }
 }
