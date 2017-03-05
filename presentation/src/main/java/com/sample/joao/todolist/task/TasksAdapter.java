@@ -1,9 +1,11 @@
 package com.sample.joao.todolist.task;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sample.joao.todolist.R;
@@ -39,6 +41,17 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.RecordedTrip
     public void onBindViewHolder(RecordedTripItemViewHolder holder, int position) {
         holder.titleTextView.setText(tasksViewModels.get(position).getTitle());
         holder.dateTextView.setText(tasksViewModels.get(position).getDate());
+        switch (tasksViewModels.get(position).getPriority()){
+            case 1:
+                holder.statusImageView.setBackgroundResource(R.drawable.ic_circle_red);
+                break;
+            case 2:
+                holder.statusImageView.setBackgroundResource(R.drawable.ic_circle_orange);
+                break;
+            case 3:
+                holder.statusImageView.setBackgroundResource(R.drawable.ic_circle_yellow);
+                break;
+        }
     }
 
     @Override
@@ -53,6 +66,9 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.RecordedTrip
 
         @Bind(R.id.item_task_date)
         TextView dateTextView;
+
+        @Bind(R.id.img_status_task)
+        ImageView statusImageView;
 
         public RecordedTripItemViewHolder(View itemView) {
             super(itemView);
