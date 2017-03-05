@@ -8,8 +8,19 @@ import com.sample.joao.data.task.TaskDBModel;
  * {@link TaskDomainModel}
  */
 public class TaskDomainMapper implements Mapper<TaskDBModel,TaskDomainModel> {
+
     @Override
-    public TaskDomainModel map(TaskDBModel model) {
-        return null;
+    public TaskDomainModel map(TaskDBModel taskDBModel) {
+        TaskDomainModel taskDomainModel = new TaskDomainModel();
+        taskDomainModel.setTitle(taskDBModel.getTitle());
+        taskDomainModel.setDescription(taskDBModel.getDescription());
+        taskDomainModel.setPriority(taskDBModel.getPriority());
+        taskDBModel.setStatus(taskDBModel.getStatus());
+        taskDBModel.setDate(taskDBModel.getDate());
+        taskDBModel.setId(taskDBModel.getId());
+        taskDBModel.setLabel(taskDBModel.getLabel());
+        taskDBModel.setType(taskDBModel.getType());
+
+        return taskDomainModel;
     }
 }
