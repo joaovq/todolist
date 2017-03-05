@@ -29,7 +29,8 @@ public class MainActivity extends BaseActivity
 
         initNavigationView();
 
-        UiManager.loadFragment(new TasksFragment(), getFragmentManager(), "MAIN");
+        getFragmentManager().beginTransaction()
+                .replace(R.id.content_frame, new TasksFragment(),"MAIN").commit();
     }
 
     @Override
