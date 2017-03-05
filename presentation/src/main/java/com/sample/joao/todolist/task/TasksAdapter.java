@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.sample.joao.todolist.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import butterknife.Bind;
@@ -36,7 +37,8 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.RecordedTrip
 
     @Override
     public void onBindViewHolder(RecordedTripItemViewHolder holder, int position) {
-        holder.nameTextView.setText(tasksViewModels.get(position).getTitle());
+        holder.titleTextView.setText(tasksViewModels.get(position).getTitle());
+        holder.dateTextView.setText(tasksViewModels.get(position).getDate());
     }
 
     @Override
@@ -47,7 +49,10 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.RecordedTrip
     public class RecordedTripItemViewHolder extends RecyclerView.ViewHolder {
 
         @Bind(R.id.item_task_title)
-        TextView nameTextView;
+        TextView titleTextView;
+
+        @Bind(R.id.item_task_date)
+        TextView dateTextView;
 
         public RecordedTripItemViewHolder(View itemView) {
             super(itemView);

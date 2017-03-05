@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.sample.joao.todolist.R;
-import com.sample.joao.todolist.others.DrawerLayoutHelper;
+import com.sample.joao.todolist.others.DrawerLayoutUtils;
 
 /**
  * Classe base {@link android.app.Activity} para todas as atividades nessa app
@@ -21,7 +21,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = DrawerLayoutHelper.get(this);
+        DrawerLayout drawer = DrawerLayoutUtils.get(this);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {

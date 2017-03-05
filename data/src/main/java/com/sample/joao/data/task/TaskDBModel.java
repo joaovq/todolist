@@ -14,9 +14,11 @@ public class TaskDBModel extends SugarRecord {
     String description;
     Integer status;
     Integer priority;
-    Date date;
+    String date;
     LabelDBModel label;
     TypeDBModel type;
+
+    public TaskDBModel() { }
 
     public LabelDBModel getLabel() {
         return label;
@@ -42,11 +44,11 @@ public class TaskDBModel extends SugarRecord {
         this.priority = priority;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

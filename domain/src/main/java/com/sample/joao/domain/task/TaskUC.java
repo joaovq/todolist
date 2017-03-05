@@ -9,13 +9,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * {@link IGetTasksUC} que obtém dados do banco e retorna {@link TaskDomainModel}
+ * {@link ITaskUC} que salva um novo {@link TaskDomainModel} no banco de dados
  */
-public class GetTasksUC extends BaseUseCase implements IGetTasksUC {
+public class TaskUC extends BaseUseCase implements ITaskUC {
     TaskDomainMapper taskDomainMapper;
 
-    public GetTasksUC(){
+    public TaskUC(){
         taskDomainMapper = new TaskDomainMapper();
+    }
+
+    @Override
+    public void save(ITaskRepository repository, TaskDomainModel domainModel) {
+        if(repository instanceof TaskRepository){
+            TaskDBModel taskDBModel = new TaskDBModel();
+            taskDBModel.setTitle(domainModel.getTitle());
+            taskDBModel.setDescription(domainModel.getDescription());
+            taskDBModel.setPriority(domainModel.getPriority());
+            taskDBModel.setDate(domainModel.getDate());
+
+            repository.save(taskDBModel);
+            fireOnNext(repository.getTaskId());
+        }
     }
 
     @Override

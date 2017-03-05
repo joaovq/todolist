@@ -11,7 +11,7 @@ import com.sample.joao.todolist.R;
 /**
  * Gerenciador do menu lateral da tela principal
  */
-public class DrawerLayoutHelper {
+public class DrawerLayoutUtils {
 
     /**
      * Inicializa drawer

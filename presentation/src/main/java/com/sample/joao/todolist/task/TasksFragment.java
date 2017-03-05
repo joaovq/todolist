@@ -1,14 +1,12 @@
 package com.sample.joao.todolist.task;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.sample.joao.todolist.R;
+import com.sample.joao.todolist.others.DialogsUtils;
 import com.sample.joao.todolist.others.fragment.BaseFragment;
 
 import java.util.ArrayList;
@@ -18,7 +16,7 @@ import butterknife.Bind;
 /**
  * Fragmento que apresenta uma lista com as tarefas
  */
-public class TasksFragment extends BaseFragment<GetTasksPresenter> implements ITaksView {
+public class TasksFragment extends BaseFragment<GetTasksPresenter> implements IGetTaksView {
     @Bind(R.id.recyclerview_task)
     RecyclerView tasksRecyclerView;
 
@@ -44,9 +42,19 @@ public class TasksFragment extends BaseFragment<GetTasksPresenter> implements IT
     }
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.fragment_main;
-    }
+    protected int getLayoutId() { return R.layout.fragment_main; }
+
+    @Override
+    public void showProgress(String title, String message) { DialogsUtils.showProgress(getContext(),title,message); }
+
+    @Override
+    public void hideProgress() { DialogsUtils.hideProgress(); }
+
+    @Override
+    public void showError(String error) { }
+
+    @Override
+    public void showMessage(String message) { }
 
     @Override
     public void showEmptyData() {

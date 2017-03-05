@@ -14,7 +14,7 @@ public class TaskViewModel {
     String description;
     Integer status;
     Integer priority;
-    Date date;
+    String date;
     LabelViewModel labelViewModel;
     TypdeViewModel typdeViewModel;
 
@@ -42,11 +42,11 @@ public class TaskViewModel {
         this.priority = priority;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

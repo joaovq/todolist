@@ -13,7 +13,7 @@ public class TaskDomainModel {
     String description;
     Integer status;
     Integer priority;
-    Date date;
+    String date;
     LabelDomainModel labelDomainModel;
     TypdeDomainModel typdeDomainModel;
 
@@ -41,11 +41,11 @@ public class TaskDomainModel {
         this.priority = priority;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

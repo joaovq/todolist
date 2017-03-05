@@ -17,4 +17,37 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="CustomTextView" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/text_view_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorTextView</item>
+    </style>
+
+    <style name="CustomItemView" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/item_view_size</item>
+        <item name="android:textColor">@color/colorItemView</item>
+    </style>
+
+    <style name="CustomSubItemView" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/sub_item_view_size</item>
+        <item name="android:textColor">@color/colorSubItemView</item>
+    </style>
+
+    <style name="CustomButton" parent="@android:style/Widget.Button">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:background">@drawable/btn_radius_border</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColorHint">#ffffff</item>
+    </style>
+    <style name="CustomEditText" parent="@android:style/Widget.EditText">
+        <item name="android:textSize">@dimen/edit_text_size</item>
+        <item name="android:textColor">@color/colorTextView</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingBottom">@dimen/edit_text_margin_vertical</item>
+        <item name="android:paddingTop">@dimen/edit_text_margin_vertical</item>
+        <item name="android:paddingLeft">@dimen/edit_text_margin_horizontal</item>
+        <item name="android:paddingRight">@dimen/edit_text_margin_horizontal</item>
+    </style>
+
 </resources>

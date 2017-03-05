@@ -9,13 +9,14 @@ import java.util.ArrayList;
 /**
  * Presenter que faz a comunicação entre a view (camada superior) e domain (camada do meio)
  */
-public class GetTasksPresenter extends BasePresenter<ITaksView> {
+public class GetTasksPresenter extends BasePresenter<IGetTaksView> {
     TaskViewMapper taskViewMapper;
 
     /**
      * Obtém tarefas salvas na memória local
      */
     public void getTasks(){
+        getView().showProgress("Obtendo dados","Por favor, aguarde!");
         new GetTasksInvoker(){
             @Override
             public void onNext(ArrayList<TaskDomainModel> taskDomainModels){
@@ -23,6 +24,8 @@ public class GetTasksPresenter extends BasePresenter<ITaksView> {
                 ArrayList<TaskViewModel> taskViewModels = new ArrayList<>();
                 for(TaskDomainModel taskDomainModel : taskDomainModels)
                     taskViewModels.add(taskViewMapper.map(taskDomainModel));
+
+                getView().hideProgress();
 
                 if(!taskDomainModels.isEmpty())
                     getView().showData(taskViewModels);

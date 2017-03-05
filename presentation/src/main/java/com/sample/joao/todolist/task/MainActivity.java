@@ -1,8 +1,8 @@
 package com.sample.joao.todolist.task;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.view.Menu;
@@ -10,11 +10,13 @@ import android.view.MenuItem;
 
 import com.sample.joao.todolist.R;
 import com.sample.joao.todolist.others.UiManager;
-import com.sample.joao.todolist.others.DrawerLayoutHelper;
+import com.sample.joao.todolist.others.DrawerLayoutUtils;
 import com.sample.joao.todolist.others.activity.BaseActivity;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +25,19 @@ public class MainActivity extends BaseActivity
 
         initFloatingBar();
 
-        DrawerLayoutHelper.init(this,getToolbar());
+        DrawerLayoutUtils.init(this,getToolbar());
 
         initNavigationView();
 
-        UiManager.loadFragment(new TasksFragment(), getFragmentManager());
+        UiManager.loadFragment(new TasksFragment(), getFragmentManager(), "MAIN");
+    }
+
+    @Override
+    public void onBackPressed(){
+        Fragment f = getFragmentManager().findFragmentByTag("MAIN");
+        if(f instanceof TasksFragment)
+            fab.show();
+        super.onBackPressed();
     }
 
     @Override
@@ -40,7 +50,7 @@ public class MainActivity extends BaseActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
-        DrawerLayoutHelper.onItemSelected(this,id);
+        DrawerLayoutUtils.onItemSelected(this,id);
 
         return true;
     }
@@ -49,12 +59,14 @@ public class MainActivity extends BaseActivity
      * Inicializa floating bar usada para adicionar uma nova tarefa
      */
     private void initFloatingBar(){
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_new_task);
+        fab = (FloatingActionButton) findViewById(R.id.fab_new_task);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Ir para tela de add", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                fab.hide();
+                UiManager.loadFragment(new AddTaskFragment(), getFragmentManager(), "OTHER");
+//                Snackbar.make(view, "Ir para tela de add", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
             }
         });
     }

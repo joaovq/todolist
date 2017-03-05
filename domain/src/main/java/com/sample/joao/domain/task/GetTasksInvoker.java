@@ -9,12 +9,12 @@ import java.util.ArrayList;
  * Invoker usado para intermediar a pesquisa por tarefas no banco de dados
  */
 public class GetTasksInvoker extends BaseInvoker<ArrayList<TaskDomainModel>>{
-    GetTasksUC getTasksUC;
+    TaskUC taskUC;
 
     public GetTasksInvoker(){
-        getTasksUC = new GetTasksUC();
-        getTasksUC.subscribe(this);
-        getTasksUC.get(new TaskRepository());
+        taskUC = new TaskUC();
+        taskUC.subscribe(this);
+        taskUC.get(new TaskRepository());
     }
 
     @Override

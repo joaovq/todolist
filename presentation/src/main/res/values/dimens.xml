@@ -2,8 +2,34 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
+
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
     <dimen name="fab_margin">16dp</dimen>
+
+    <!-- Dimensões para EditText -->
+    <dimen name="edit_text_size">15dp</dimen>
+    <dimen name="edit_text_margin_vertical">10dp</dimen>
+    <dimen name="edit_text_margin_horizontal">10dp</dimen>
+    <dimen name="edit_text_horizontal_margin">10dp</dimen>
+    <dimen name="edit_text_vertical_margin">10dp</dimen>
+
+
+    <!-- Dimensões para TextView -->
+    <dimen name="text_view_size">20sp</dimen>
+    <dimen name="item_view_size">20dp</dimen>
+    <dimen name="sub_item_view_size">10dp</dimen>
+
+    <!-- Dimensões para Button -->
+    <dimen name="button_border_width">1dp</dimen>
+    <dimen name="button_text_size">15sp</dimen>
+    <dimen name="button_vertical_margin">15dp</dimen>
+
+    <!-- Atividades e fragments -->
+    <dimen name="activity_form_margin">10dp</dimen>
+
+    <!-- Dimensões para itens do recycler view -->
+    <dimen name="recycler_view_padding">5dp</dimen>
 </resources>

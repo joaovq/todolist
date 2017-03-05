@@ -5,4 +5,18 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="action_save">Salvar</string>
+
+    <string name="text_no_task">Não há tarefas</string>
+
+    <string name="prompt_title">Título</string>
+    <string name="prompt_description">Descrição</string>
+    <string name="prompt_priority">Prioridade</string>
+    <string name="prompt_end_date">Data de expiração</string>
+
+    <string name="error_field_required">Campo obrigatório!</string>
+
+    <string name="item_priority_high">Alta</string>
+    <string name="item_priority_medium">Média</string>
+    <string name="item_priority_low">Baixa</string>
 </resources>

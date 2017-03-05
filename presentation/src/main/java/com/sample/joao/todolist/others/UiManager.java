@@ -14,8 +14,8 @@ public class UiManager {
      * @param fragmentToLoad
      * @param fragmentManager
      */
-    public static void loadFragment(BaseFragment fragmentToLoad, FragmentManager fragmentManager) {
+    public static void loadFragment(BaseFragment fragmentToLoad, FragmentManager fragmentManager,String tag) {
         fragmentManager.beginTransaction()
-                .replace(R.id.content_frame, fragmentToLoad).addToBackStack(fragmentToLoad.getClass().toString()).commit();
+                .replace(R.id.content_frame, fragmentToLoad,tag).addToBackStack(fragmentToLoad.getClass().toString()).commit();
     }
 }

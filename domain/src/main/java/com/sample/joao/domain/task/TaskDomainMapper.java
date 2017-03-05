@@ -15,11 +15,8 @@ public class TaskDomainMapper implements Mapper<TaskDBModel,TaskDomainModel> {
         taskDomainModel.setTitle(taskDBModel.getTitle());
         taskDomainModel.setDescription(taskDBModel.getDescription());
         taskDomainModel.setPriority(taskDBModel.getPriority());
-        taskDBModel.setStatus(taskDBModel.getStatus());
-        taskDBModel.setDate(taskDBModel.getDate());
-        taskDBModel.setId(taskDBModel.getId());
-        taskDBModel.setLabel(taskDBModel.getLabel());
-        taskDBModel.setType(taskDBModel.getType());
+        taskDomainModel.setStatus(taskDBModel.getStatus());
+        taskDomainModel.setDate(taskDBModel.getDate());
 
         return taskDomainModel;
     }
