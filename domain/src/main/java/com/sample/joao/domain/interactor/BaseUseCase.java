@@ -5,7 +5,7 @@ import com.sample.joao.domain.invoker.BaseInvoker;
 import java.util.ArrayList;
 
 /**
- * Interador base
+ * Base Use Case
  */
 public class BaseUseCase {
 

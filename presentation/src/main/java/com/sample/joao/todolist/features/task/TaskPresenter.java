@@ -30,8 +30,8 @@ public class TaskPresenter extends BasePresenter<ITaskView> {
 
         new SaveTaskInvoker(new TaskRepository(), taskDomainModel){
             @Override
-            public void onNext(Long tripId) {
-                getView().saveSucessfully(tripId);
+            public void onNext(Long aLong) {
+                getView().saveSucessfully(aLong);
 //                getView().hideProgress();
             }
         };

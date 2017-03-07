@@ -5,15 +5,13 @@ import com.google.common.collect.Lists;
 import java.util.ArrayList;
 
 /**
- * {@link ITaskRepository} que obtém dados de {@link TaskDBModel}
+ * {@link ITaskRepository} that get data from cache or the server
  */
 public class TaskRepository implements ITaskRepository {
 
-    private long id;
-
     @Override
     public void save(TaskDBModel newTask) {
-        id = newTask.save();
+        newTask.save();
     }
 
     @Override
@@ -26,11 +24,6 @@ public class TaskRepository implements ITaskRepository {
         taskModel.setDate(updatedModel.getDate());
         taskModel.setLabel(updatedModel.getLabel());
         taskModel.setType(updatedModel.getType());
-    }
-
-    @Override
-    public long getTaskId() {
-        return id;
     }
 
     @Override

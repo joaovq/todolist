@@ -19,12 +19,6 @@ public interface ITaskRepository {
     void update(TaskDBModel task);
 
     /**
-     * Obtém o id de uma {@link TaskDBModel}
-     * @return Id da {@link TaskDBModel} selecionada
-     */
-    long getTaskId();
-
-    /**
      * Obtém uma {@link TaskDBModel} com um determinado id
      * @param id
      * @return

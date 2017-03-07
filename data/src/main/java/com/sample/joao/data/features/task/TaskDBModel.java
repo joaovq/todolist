@@ -1,13 +1,13 @@
 package com.sample.joao.data.features.task;
 
-import com.orm.SugarRecord;
+import com.sample.joao.data.BaseModel;
 import com.sample.joao.data.features.label.LabelDBModel;
 import com.sample.joao.data.features.type.TypeDBModel;
 
 /**
  * Tabela TaskDBModel usada para armazenar as tarefas a serem feitas
  */
-public class TaskDBModel extends SugarRecord {
+public class TaskDBModel extends BaseModel {
     String title;
     String description;
     Integer status;

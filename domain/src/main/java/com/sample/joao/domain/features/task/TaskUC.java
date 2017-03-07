@@ -28,7 +28,6 @@ public class TaskUC extends BaseUseCase implements ITaskUC {
             taskDBModel.setDate(domainModel.getDate());
 
             repository.save(taskDBModel);
-            fireOnNext(repository.getTaskId());
         }
     }
 
